@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaspard Nordin — Portfolio</title>
+  <meta name="description" content="Portfolio de Gaspard Nordin, élève ingénieur Arts et Métiers : projets académiques en modélisation, simulation et systèmes de production.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== EN-TÊTE / NAVIGATION ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#accueil" class="logo">G<span>N</span></a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="menu">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" aria-label="Changer de thème">◐</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== ACCUEIL ===== -->
+    <section id="accueil" class="hero container">
+      <p class="eyebrow">Élève ingénieur — Arts et Métiers (ENSAM)</p>
+      <h1>Bonjour, je suis <em>Gaspard Nordin</em>.</h1>
+      <p class="hero-text">
+        Modélisation, simulation et optimisation des systèmes de production.
+        Je présente ici mes projets académiques : la démarche, les outils et ce que j'en ai appris.
+      </p>
+      <div class="hero-actions">
+        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+        <a href="assets/cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Mon CV (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="apropos" class="section container">
+      <h2 class="section-title">À propos</h2>
+      <div class="about">
+        <img src="assets/images/photo.jpg" alt="Portrait de Gaspard Nordin" class="about-photo"
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'about-photo placeholder',textContent:'GN'}))">
+        <div>
+          <p>
+            Élève ingénieur généraliste au Programme Grande École d'Arts et Métiers, après deux ans
+            de classes préparatoires MP au lycée Lakanal. J'aime les problèmes où les mathématiques
+            (graphes, chaînes de Markov, réseaux de Petri) rencontrent le terrain : chantier,
+            atelier, ligne de production.
+          </p>
+          <p>
+            Je recherche un <strong>stage de recherche de 6 mois à partir de février</strong>.
+          </p>
+          <ul class="facts">
+            <li><strong>Formation</strong> Ingénieur généraliste — ENSAM</li>
+            <li><strong>International</strong> Semestre à Universiti Teknologi Petronas (Malaisie)</li>
+            <li><strong>Localisation</strong> Paris, France</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJETS (générés depuis js/projets.js) ===== -->
+    <section id="projets" class="section container">
+      <h2 class="section-title">Projets</h2>
+      <div class="filters" role="group" aria-label="Filtrer les projets"></div>
+      <div class="projects-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- ===== COMPÉTENCES ===== -->
+    <section id="competences" class="section container">
+      <h2 class="section-title">Compétences</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Modélisation</h3>
+          <ul><li>Théorie des graphes</li><li>Chaînes de Markov</li><li>Réseaux de Petri</li><li>Files d'attente</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Outils</h3>
+          <ul><li>Python</li><li>AnyLogic (multi-agents)</li><li>LaTeX</li><li>Microsoft Office</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Langues</h3>
+          <ul><li>Français (natif)</li><li>Anglais (C1)</li><li>Espagnol (B1)</li><li>Chinois (débutant)</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section container contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Un sujet de stage, une question sur un projet ? Écrivez-moi.</p>
+      <a href="mailto:gaspardnordin@gmail.com" class="contact-mail">gaspardnordin@gmail.com</a>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="container">© <span id="annee"></span> Gaspard Nordin</p>
+  </footer>
+
+  <!-- Fenêtre de détail d'un projet -->
+  <dialog class="project-modal" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <div class="modal-body"></div>
+  </dialog>
+
+  <script src="js/projets.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
