@@ -20,6 +20,7 @@ const PROFILE = {
  *  featured  true = shown on the Dashboard
  *  details   list of paragraphs shown when the card is opened
  *  links     [{ text, url }]  e.g. report PDF in assets/docs/
+ *  gallery   [{ src, caption }]  images shown in the detail window
  */
 const PROJECTS = [
   {
@@ -37,6 +38,32 @@ const PROJECTS = [
     tags: ["Graph theory", "Markov chains", "Petri nets", "AnyLogic"],
     image: "",
     featured: true,
+    links: []
+  },
+  {
+    title: "Uncertain Catapult — Robust Inverse Design",
+    category: "Design of Experiments",
+    period: "Dec 2025",
+    context: "Team project (5 students) · Arts et Métiers — OREXA",
+    summary: "Finding the settings that make a noisy catapult hit a target range: measurement validation, design of experiments, robust optimisation and kriging.",
+    details: [
+      "Problem — A catapult has five settings (two angles, three positions) and several sources of noise: mechanical tolerances, mass dispersion, operator gestures. The same settings never give exactly the same range, and no simple formula links inputs to output. The goal was to solve the inverse problem: which settings hit a target range of 1.95 m ± 0.10 m?",
+      "Measurement validation — A gauge R&R study (ANOVA on 30 shots, 3 configurations, 2 operators) showed that repeatability and reproducibility account for less than 0.03% of the variability: over 99% comes from the settings themselves.",
+      "Modelling — Designs of experiments of increasing efficiency: full factorial 2⁵ (32 runs), fractional 2⁵⁻² (8 runs, same ranking of effects), then Taguchi L8 and L25. The L25 model explains 97% of the variance (R² = 0.97) with a mean error of 0.116 m.",
+      "Robust optimisation — Solving the inverse problem with Nelder–Mead on the Taguchi model. Minimising the distance to the target alone was not enough (best setting: 76% of shots in tolerance). Adding robustness, centring and tolerance criteria to the objective gave a setting with 25/25 shots in tolerance (mean 1.954 m).",
+      "Alternative approach — An ordinary kriging metamodel (polynomial variogram, R² = 0.981 on the test set) coupled with a genetic algorithm, which found a candidate setting within 10⁻⁴ of the target on the metamodel.",
+      "[Add your personal contribution to the team here.]"
+    ],
+    tags: ["Gauge R&R / ANOVA", "Design of experiments", "Taguchi", "Nelder–Mead", "Kriging", "Genetic algorithm", "Python", "Excel"],
+    image: "assets/images/catapult/setup.png",
+    gallery: [
+      { src: "assets/images/catapult/setup.png", caption: "The catapult and its five settings: release angle A1, loading angle A2, spring positions L1 and L2, mass position L3." },
+      { src: "assets/images/catapult/doe-effects.png", caption: "Relative effects of the main factors: the full factorial design (32 runs) and two fractional designs (8 runs each) agree." },
+      { src: "assets/images/catapult/taguchi-fit.png", caption: "Taguchi L25 model: predicted vs measured range (R² = 0.97)." },
+      { src: "assets/images/catapult/validation.png", caption: "Experimental validation, 25 shots per setting: the robust setting (blue) keeps 100% of shots in the ±0.10 m tolerance band." },
+      { src: "assets/images/catapult/kriging-ga.png", caption: "Alternative approach: a kriging metamodel coupled with a genetic algorithm." }
+    ],
+    featured: false,
     links: []
   },
   {
@@ -142,9 +169,7 @@ const EDUCATION = [
     description: "Intensive programme in mathematics and physics preparing for the competitive entrance exams of the French Grandes Écoles d'ingénieurs.",
     points: [
       "Around 35 hours of lectures and tutorials per week.",
-      "A 4-hour written exam every week.",
-      "2 to 3 one-hour oral examinations (khôlles) every week.",
-      "Total workload of around 60 hours per week including personal study."
+      "A 4-hour written exam and 2 to 3 one-hour oral examinations (khôlles) every week."
     ],
     skills: [
       "Linear algebra", "Real & complex analysis", "Probability",

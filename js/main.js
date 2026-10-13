@@ -185,12 +185,17 @@ function openProject(i) {
     dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
   }
   dlg.querySelector(".dlg-body").innerHTML = `
-    ${p.image ? `<img class="thumb" src="${esc(p.image)}" alt="">` : ""}
+    ${p.image && !p.gallery ? `<img class="thumb" src="${esc(p.image)}" alt="">` : ""}
     <span class="mono">// ${esc(p.category)} · ${esc(p.period)}</span>
     <h2>${esc(p.title)}</h2>
     <p class="sub">${esc(p.context)}</p>
     ${p.details.map(d => `<p>${esc(d)}</p>`).join("")}
     ${tags(p.tags)}
+    ${(p.gallery || []).map(g => `
+      <figure class="figure">
+        <a href="${esc(g.src)}" target="_blank" rel="noopener"><img src="${esc(g.src)}" alt="${esc(g.caption)}" loading="lazy"></a>
+        <figcaption>${esc(g.caption)}</figcaption>
+      </figure>`).join("")}
     ${p.links.length ? `<div class="links">${p.links.map(l =>
       `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")}</div>` : ""}`;
   dlg.showModal();
