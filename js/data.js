@@ -52,7 +52,7 @@ const PROJECTS = [
       "Modelling — Designs of experiments of increasing efficiency: full factorial 2⁵ (32 runs), fractional 2⁵⁻² (8 runs, same ranking of effects), then Taguchi L8 and L25. The L25 model explains 97% of the variance (R² = 0.97) with a mean error of 0.116 m.",
       "Robust optimisation — Solving the inverse problem with Nelder–Mead on the Taguchi model. Minimising the distance to the target alone was not enough (best setting: 76% of shots in tolerance). Adding robustness, centring and tolerance criteria to the objective gave a setting with 25/25 shots in tolerance (mean 1.954 m).",
       "Alternative approach — An ordinary kriging metamodel (polynomial variogram, R² = 0.981 on the test set) coupled with a genetic algorithm, which found a candidate setting within 10⁻⁴ of the target on the metamodel.",
-      "[Add your personal contribution to the team here.]"
+      "My contribution — Within the team of five, I was in charge of the data processing part of the study."
     ],
     tags: ["Gauge R&R / ANOVA", "Design of experiments", "Taguchi", "Nelder–Mead", "Kriging", "Genetic algorithm", "Python", "Excel"],
     image: "assets/images/catapult/setup.png",
@@ -64,7 +64,7 @@ const PROJECTS = [
       { src: "assets/images/catapult/kriging-ga.png", caption: "Alternative approach: a kriging metamodel coupled with a genetic algorithm." }
     ],
     featured: false,
-    links: []
+    links: [{ text: "Read the full report (PDF, in French)", url: "assets/docs/catapult-report.pdf" }]
   },
   {
     title: "Electric Motorcycle Innovation",
