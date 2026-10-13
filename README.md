@@ -1,37 +1,30 @@
-# Portfolio — Gaspard Nordin
-
-Site statique (HTML / CSS / JavaScript), sans framework ni installation.
+# Portfolio — Gaspard Nordin (v2, multi-page)
 
 ## Structure
-
 ```
-portfolio/
-├── index.html          ← le texte de la page (à propos, compétences, contact)
-├── css/style.css       ← l'apparence (couleur principale : --accent en haut du fichier)
-├── js/projets.js       ← TES PROJETS : le seul fichier à toucher pour en ajouter
-├── js/main.js          ← le fonctionnement (filtres, fenêtre de détail, thème sombre)
-└── assets/
-    ├── cv.pdf          ← ton CV
-    ├── images/         ← photo.jpg (portrait) + images des projets
-    └── docs/           ← rapports, posters, présentations en PDF
+index.html        Dashboard (overview, photo, featured cards, skills)
+projects.html     Projects (filters + detail window)
+resume.html       Resume (CV shown inside the page + download button)
+academics.html    Academic journey (timeline)
+experience.html   Experience (timeline)
+css/style.css     Look & feel — colours at the top (--accent)
+js/data.js        ALL YOUR CONTENT: profile, projects, experience, education, skills
+js/main.js        Builds the sidebar and the pages (no need to edit)
+assets/cv.pdf     Your CV
+assets/images/    photo.jpg + project images
+assets/docs/      Reports, posters, slides (PDF)
 ```
 
-## Voir le site sur ton ordinateur
-Double-clique sur `index.html` : il s'ouvre dans ton navigateur.
+## Editing
+- Text, projects, experience, education → `js/data.js` only.
+- Photo → put `photo.jpg` in `assets/images/`.
+- Project image → put it in `assets/images/` and set `image: "assets/images/name.jpg"`.
+- New CV → replace `assets/cv.pdf` (same name).
 
-## Ajouter un projet
-Dans `js/projets.js`, copie un bloc `{ ... },`, colle-le dans la liste et modifie les champs.
-Pour un rapport : mets le PDF dans `assets/docs/` et ajoute
-`{ texte: "Rapport (PDF)", url: "assets/docs/mon-rapport.pdf" }` dans `liens`.
-
-## Mettre en ligne (GitHub Pages, gratuit)
-1. Crée un compte sur github.com.
-2. Crée un dépôt nommé exactement `ton-pseudo.github.io` (public).
-3. « Add file » → « Upload files » → glisse le CONTENU du dossier `portfolio`
-   (index.html doit être à la racine) → « Commit changes ».
-4. Settings → Pages → Source : « Deploy from a branch », branche `main`, dossier `/ (root)`.
-5. Après 1–2 minutes, le site est en ligne sur `https://ton-pseudo.github.io`.
-
-Pour une mise à jour : réuploade les fichiers modifiés, le site se met à jour tout seul.
-
-Alternative sans compte GitHub : app.netlify.com/drop → glisse le dossier `portfolio`.
+## Replacing the old site on GitHub
+1. Open `https://github.com/USERNAME/USERNAME.github.io/upload`
+2. Drag in everything inside this folder (the 5 .html files, `css`, `js`, `assets`, `README.md`).
+   Files with the same name are overwritten.
+3. Click **Commit changes**. The site updates within 1–2 minutes (refresh with Ctrl + F5).
+4. Optional clean-up: the old `js/projets.js` is no longer used. Open it on GitHub →
+   `…` menu (top right of the file) → **Delete file** → **Commit changes**.

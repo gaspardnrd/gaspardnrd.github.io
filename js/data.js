@@ -1,0 +1,135 @@
+/*
+ * =============================================================
+ *  YOUR CONTENT — edit this file to update the whole site.
+ *  (Projects, experience and education are all listed here.)
+ * =============================================================
+ */
+
+const PROFILE = {
+  initials: "GN",
+  name: "Gaspard Nordin",
+  tagline: ["Engineering Student", "Arts et Métiers"],
+  email: "gaspardnordin@gmail.com",
+  linkedin: "https://www.linkedin.com/in/your-profile",   // ← put your real LinkedIn URL
+  photo: "assets/images/photo.jpg",                        // ← add your photo with this name
+  cv: "assets/cv.pdf"
+};
+
+/*  PROJECTS
+ *  category  short label shown as "// CATEGORY"
+ *  featured  true = shown on the Dashboard
+ *  details   list of paragraphs shown when the card is opened
+ *  links     [{ text, url }]  e.g. report PDF in assets/docs/
+ */
+const PROJECTS = [
+  {
+    title: "Inclusive Task Allocation",
+    category: "Research",
+    period: "Sep 2025 — Present",
+    context: "Research-supervised project · ENSAM Metz",
+    summary: "Task allocation model that accounts for operators' varying functional capabilities in a production system.",
+    details: [
+      "Context — In a production system, operators do not all have the same functional capabilities. The goal is to allocate tasks so that the line stays productive while remaining fair.",
+      "Approach — Graph theory and stochastic modelling (Markov chains, Petri nets) to make planning more robust to variability.",
+      "Results — A multi-agent simulation in AnyLogic compares allocation scenarios on productivity and operational fairness.",
+      "[Add your personal contribution, one key figure and what you learned.]"
+    ],
+    tags: ["Graph theory", "Markov chains", "Petri nets", "AnyLogic"],
+    image: "",
+    featured: true,
+    links: []
+  },
+  {
+    title: "Electric Motorcycle Innovation",
+    category: "Entrepreneurship",
+    period: "Oct 2024 — Jun 2025",
+    context: "Team project with Medusa (French e-motorcycle start-up) · ENSAM Metz",
+    summary: "Innovation concept for the electric motorcycle market, developed with a French start-up.",
+    details: [
+      "Context — Medusa is a French electric motorcycle start-up. Our team had to propose an innovation concept for this market.",
+      "Approach — Brainstorming, market study, cross-analysis and synthesis to converge on one concept.",
+      "[Describe the concept, your role in the team and the start-up's feedback.]"
+    ],
+    tags: ["Market study", "Ideation", "Project management"],
+    image: "",
+    featured: false,
+    links: []
+  },
+  {
+    title: "Queueing Systems Optimisation",
+    category: "Modelling",
+    period: "Sep 2023 — Jun 2024",
+    context: "TIPE · CPGE, Lycée Lakanal",
+    summary: "Optimising space, staffing and waiting time in server–client systems.",
+    details: [
+      "Question — How should a queueing system (number of servers, space) be sized to reduce waiting time?",
+      "Method — Continuous-time Markov processes, validated with numerical simulations in Python.",
+      "[Add your main results, a chart and a link to your slides or code.]"
+    ],
+    tags: ["Python", "Markov processes", "Simulation"],
+    image: "",
+    featured: false,
+    links: []
+  }
+];
+
+/*  EXPERIENCE */
+const EXPERIENCE = [
+  {
+    label: "Construction",
+    period: "Jun 2025 — Jul 2025",
+    title: "Chantiers Modernes Construction (VINCI)",
+    role: "Construction Site Worker Intern — Formwork",
+    place: "Paris",
+    points: [
+      "On-site immersion on a major infrastructure project (EOLE / Line 15 interfaces).",
+      "Full prepare–formwork–pour–strip cycle for reinforced concrete: fibre-reinforced segments, walls, columns, foundation raft in a shaft.",
+      "Read technical drawings, took measurements with surveyor support and ran visual quality checks.",
+      "Coordinated with waterproofing and rebar teams on sequencing and site readiness."
+    ]
+  },
+  {
+    label: "Teaching",
+    period: "Oct 2024 — Present",
+    title: "Tutoring London",
+    role: "Private Tutor (remote)",
+    place: "Remote",
+    points: [
+      "Prepare high-school students for the scientific baccalauréat (maths and physics)."
+    ]
+  }
+];
+
+/*  EDUCATION */
+const EDUCATION = [
+  {
+    period: "Sep 2024 — Present",
+    school: "Arts et Métiers Institute of Technology (ENSAM)",
+    degree: "Generalist Engineering Degree — Programme Grande École",
+    place: "Metz",
+    points: [
+      "Mechanical, industrial and electrical engineering courses.",
+      "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026)."
+    ]
+  },
+  {
+    period: "2021 — 2024",
+    school: "Lycée Lakanal",
+    degree: "CPGE — Mathematics & Physics (MP)",
+    place: "Sceaux",
+    points: ["Intensive preparation for the French Grandes Écoles entrance exams."]
+  },
+  {
+    period: "Jun 2021",
+    school: "Lycée Pascal",
+    degree: "Scientific Baccalauréat — Honours: Très Bien",
+    place: "Paris",
+    points: ["Advanced Mathematics option."]
+  }
+];
+
+const SKILLS = {
+  "Modelling": ["Graph theory", "Markov chains", "Petri nets", "Queueing theory"],
+  "Tools": ["Python", "AnyLogic (multi-agent)", "LaTeX", "Microsoft Office"],
+  "Languages": ["French (native)", "English (C1)", "Spanish (B1)", "Chinese (beginner)"]
+};
