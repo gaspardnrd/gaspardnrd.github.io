@@ -152,10 +152,15 @@ if (page === "academics") {
   view.innerHTML = `
     <h1 class="page-title">Academic Journey</h1>
     ${timeline(EDUCATION, e => `
-      <div class="card-head"><span class="mono">${esc(e.place)}</span><span class="date">${esc(e.period)}</span></div>
+      <div class="card-head">
+        <span>${e.label ? `<span class="badge">${esc(e.label)}</span> ` : ""}<span class="mono">${esc(e.place)}</span></span>
+        <span class="date">${esc(e.period)}</span>
+      </div>
       <h2>${esc(e.school)}</h2>
       <p class="sub">${esc(e.degree)}</p>
-      <ul class="points">${e.points.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`)}`;
+      ${e.description ? `<p>${esc(e.description)}</p>` : ""}
+      <ul class="points">${(e.points || []).map(p => `<li>${esc(p)}</li>`).join("")}</ul>
+      ${e.skills ? tags(e.skills) : ""}`)}`;
 }
 
 if (page === "experience") {

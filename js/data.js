@@ -100,19 +100,46 @@ const EXPERIENCE = [
   }
 ];
 
-/*  EDUCATION */
+/*  EDUCATION
+ *  label        small badge (e.g. "Research Master")
+ *  description  short paragraph under the degree
+ *  points       bullet points
+ *  skills       tags shown at the bottom of the card
+ */
 const EDUCATION = [
   {
-    period: "Sep 2024 — Present",
-    school: "Arts et Métiers Institute of Technology (ENSAM)",
-    degree: "Generalist Engineering Degree — Programme Grande École",
-    place: "Metz",
+    label: "Research Master",
+    period: "Sep 2026 — Sep 2027",
+    school: "Arts et Métiers — MSc KIMP",
+    degree: "Master of Science in Industrial Engineering · Knowledge Integration in Mechanical Production — Design & Manufacturing track",
+    place: "Paris",
+    description: "International research master taught in English, backed by the 14 laboratories and research teams of the Arts et Métiers network and designed as a pathway to doctoral research. It trains engineers to integrate product and manufacturing-process knowledge in order to reach the best global compromise rather than a locally optimal solution.",
     points: [
-      "Mechanical, industrial and electrical engineering courses.",
-      "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026)."
+      "Fall semester: core scientific courses shared by the three KIMP tracks, then Design & Manufacturing specialisation modules.",
+      "Spring semester: 6-month master thesis (research internship) in a company or laboratory, from February."
+    ],
+    skills: [
+      "Integrated design & manufacturing", "CAD / CAM", "Geometric modelling",
+      "AI for design (rules & data)", "Mechatronics modelling & control",
+      "Manufacturing process management", "Sustainable engineering",
+      "Robust design & big data", "Digital mock-up & VR",
+      "Decision & risk analysis", "Research methodology"
     ]
   },
   {
+    label: "Engineering Degree",
+    period: "Sep 2024 — Present",
+    school: "Arts et Métiers Institute of Technology (ENSAM)",
+    degree: "Diplôme d'Ingénieur — Generalist Engineering Degree (Programme Grande École)",
+    place: "Metz · Paris",
+    description: "A founding member of ParisTech, Arts et Métiers is renowned for its excellence in mechanical and industrial engineering. Its demanding curriculum pairs fundamental physics with hands-on industrial practice. Pursued in parallel with the MSc KIMP.",
+    points: [
+      "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026)."
+    ],
+    skills: ["Data Science", "Mechanics", "Thermodynamics", "Materials Science", "Supply Chain"]
+  },
+  {
+    label: "Preparatory Classes",
     period: "2021 — 2024",
     school: "Lycée Lakanal",
     degree: "CPGE — Mathematics & Physics (MP)",
@@ -120,6 +147,7 @@ const EDUCATION = [
     points: ["Intensive preparation for the French Grandes Écoles entrance exams."]
   },
   {
+    label: "Baccalauréat",
     period: "Jun 2021",
     school: "Lycée Pascal",
     degree: "Scientific Baccalauréat — Honours: Très Bien",
