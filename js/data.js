@@ -114,16 +114,11 @@ const EDUCATION = [
     degree: "Master of Science in Industrial Engineering · Knowledge Integration in Mechanical Production — Design & Manufacturing track",
     place: "Paris",
     description: "International research master taught in English, backed by the 14 laboratories and research teams of the Arts et Métiers network and designed as a pathway to doctoral research. It trains engineers to integrate product and manufacturing-process knowledge in order to reach the best global compromise rather than a locally optimal solution.",
-    points: [
-      "Fall semester: core scientific courses shared by the three KIMP tracks, then Design & Manufacturing specialisation modules.",
-      "Spring semester: 6-month master thesis (research internship) in a company or laboratory, from February."
-    ],
     skills: [
       "Integrated design & manufacturing", "CAD / CAM", "Geometric modelling",
       "AI for design (rules & data)", "Mechatronics modelling & control",
-      "Manufacturing process management", "Sustainable engineering",
-      "Robust design & big data", "Digital mock-up & VR",
-      "Decision & risk analysis", "Research methodology"
+      "Manufacturing process management", "Robust design & big data",
+      "Digital mock-up & VR", "Decision & risk analysis"
     ]
   },
   {
@@ -144,15 +139,17 @@ const EDUCATION = [
     school: "Lycée Lakanal",
     degree: "CPGE — Mathematics & Physics (MP)",
     place: "Sceaux",
-    points: ["Intensive preparation for the French Grandes Écoles entrance exams."]
-  },
-  {
-    label: "Baccalauréat",
-    period: "Jun 2021",
-    school: "Lycée Pascal",
-    degree: "Scientific Baccalauréat — Honours: Très Bien",
-    place: "Paris",
-    points: ["Advanced Mathematics option."]
+    description: "Intensive programme in mathematics and physics preparing for the competitive entrance exams of the French Grandes Écoles d'ingénieurs.",
+    points: [
+      "Around 35 hours of lectures and tutorials per week.",
+      "A 4-hour written exam every week.",
+      "2 to 3 one-hour oral examinations (khôlles) every week.",
+      "Total workload of around 60 hours per week including personal study."
+    ],
+    skills: [
+      "Linear algebra", "Real & complex analysis", "Probability",
+      "Classical mechanics", "Electromagnetism", "Thermodynamics", "Optics & waves"
+    ]
   }
 ];
 
