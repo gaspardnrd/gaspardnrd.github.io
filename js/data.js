@@ -83,20 +83,31 @@ const PROJECTS = [
     links: []
   },
   {
-    title: "Queueing Systems Optimisation",
+    title: "Markov Chains: Queues & Monopoly",
     category: "Modelling",
     period: "Sep 2023 — Jun 2024",
-    context: "TIPE · CPGE, Lycée Lakanal",
-    summary: "Optimising space, staffing and waiting time in server–client systems.",
+    context: "TIPE (individual research project) · CPGE, Lycée Lakanal",
+    summary: "Continuous-time Markov processes to size queueing systems, then a discrete-time Markov chain to model Monopoly and derive winning strategies.",
     details: [
-      "Question — How should a queueing system (number of servers, space) be sized to reduce waiting time?",
-      "Method — Continuous-time Markov processes, validated with numerical simulations in Python.",
-      "[Add your main results, a chart and a link to your slides or code.]"
+      "Question — Queues are everywhere in daily life. How can probability theory predict waiting times and help organise servers, and how far can the same tools go on a game of chance such as Monopoly?",
+      "M/M/1 queue — Poisson arrivals, exponential service times, one server, FIFO. From the infinitesimal generator and the Chapman–Kolmogorov equations, I derived the steady-state distribution and the performance indicators: mean queue length L = ρ/(1−ρ) and mean time in the system W = 1/(μ(1−ρ)).",
+      "Simulation — A Python simulator validated the theory: for λ = 0.2 and μ = 0.3, the theoretical time in the system is 10 s and 1,000 simulated queues gave 9.998 s.",
+      "Organising servers — Comparing two separate M/M/1 queues with one shared M/M/2 queue for the same load: pooling the queue cuts the mean time in the system from 5.0 to 3.8 (−24%), confirmed by 1,000 simulations each. I also tested customers split by gender with dedicated servers.",
+      "Monopoly as a Markov chain — The board's 40 squares become the states of a discrete-time chain. Three increasingly realistic models: dice only; then the jail and the three-doubles rule (120 states); then Chance and Community Chest cards. The stationary distribution shows the jail is the most visited square (about 6%), confirmed by simulation.",
+      "Strategy — Combining visit probabilities with rents gives the expected gain per opponent roll for each property and the time to pay back an investment. Payback time drops sharply up to three houses and barely improves after: three houses is the sweet spot. Results also hold for short games (250 rolls)."
     ],
-    tags: ["Python", "Markov processes", "Simulation"],
-    image: "",
+    tags: ["Markov chains", "Queueing theory", "Stochastic processes", "Monte Carlo simulation", "Python"],
+    image: "assets/images/markov/queue-diagram.png",
+    gallery: [
+      { src: "assets/images/markov/queue-diagram.png", caption: "A queueing system: customers arrive, wait in the queue, are served and leave." },
+      { src: "assets/images/markov/mm1-validation.png", caption: "1,000 simulated M/M/1 queues over 10 hours: the mean time in the system (9.998 s) matches the theory (10 s)." },
+      { src: "assets/images/markov/mm1-surface.png", caption: "Mean waiting time as a function of the arrival rate and the service rate: it explodes as the load ρ = λ/μ approaches 1." },
+      { src: "assets/images/markov/pooling.png", caption: "Two separate queues (left) vs one shared queue with two servers (right): pooling cuts the waiting time from 5.0 to 3.8." },
+      { src: "assets/images/markov/board-probabilities.png", caption: "Long-run probability of landing on each Monopoly square: theory (blue) vs simulation (orange). Square 10, the jail, stands out." },
+      { src: "assets/images/markov/houses-roi.png", caption: "Time to pay back an investment vs number of houses, for each colour group: little is gained beyond three houses." }
+    ],
     featured: false,
-    links: []
+    links: [{ text: "View the presentation (PDF, in French)", url: "assets/docs/markov-queues-monopoly.pdf" }]
   }
 ];
 
