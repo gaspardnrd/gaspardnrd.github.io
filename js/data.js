@@ -26,19 +26,28 @@ const PROJECTS = [
   {
     title: "Inclusive Task Allocation",
     category: "Research",
-    period: "Sep 2025 — Present",
-    context: "Research-supervised project · ENSAM Metz",
-    summary: "Task allocation model that accounts for operators' varying functional capabilities in a production system.",
+    period: "Sep — Dec 2025",
+    context: "Research project, team of 5 · Arts et Métiers",
+    summary: "Modelling a production workshop where operators differ in capability and fatigue, to compare task-allocation strategies on both performance and fairness.",
     details: [
-      "Context — In a production system, operators do not all have the same functional capabilities. The goal is to allocate tasks so that the line stays productive while remaining fair.",
-      "Approach — Graph theory and stochastic modelling (Markov chains, Petri nets) to make planning more robust to variability.",
-      "Results — A multi-agent simulation in AnyLogic compares allocation scenarios on productivity and operational fairness.",
-      "[Add your personal contribution, one key figure and what you learned.]"
+      "Context — Companies must combine productivity with well-being and inclusion (CSR, and in France the obligation for firms with 20+ employees to employ at least 6% of workers with disabilities). The project asks how task allocation can account for the diversity of operators without degrading the performance of the production system.",
+      "System — A workshop (applied to watchmaking assembly) with three operators who can all perform every operation, but with different capabilities and a fatigue level that changes over time. Products of random complexity arrive with random demand.",
+      "Why not a single Markov chain — Representing the whole system as one chain leads to a state-space explosion: with only 5 products and 3 levels of fatigue, capability and complexity, there are more than a billion states. Fatigue also depends on past effort, which breaks the Markov property.",
+      "Hybrid model — Product arrivals as an M/M/1 queue (Poisson arrivals, exponential service) handled by a supervisor agent; a bounded fatigue law dF/dt = Va(1−F) − Vr·F, with accumulation and recovery rates set by task strain (fuzzy logic); stochastic Petri nets for events and synchronisation; and a multi-agent model where each operator is an autonomous agent.",
+      "Evaluation framework — Performance indicators (throughput, lead time, waiting time, WIP, utilisation, workload balance, fatigue) and four allocation strategies: first in first served, least-tired operator, most-skilled operator, and most-skilled with forced rest above a fatigue threshold. No strategy is optimal in every respect: throughput and fairness pull in opposite directions.",
+      "My contribution — I carried out the first phase of the project, documented in the report below: building this modelling framework. The project then continued with numerical simulations and an agent-based model in AnyLogic."
     ],
-    tags: ["Graph theory", "Markov chains", "Petri nets", "AnyLogic"],
-    image: "",
+    tags: ["Queueing theory", "Markov chains", "Poisson process", "Stochastic Petri nets", "Fatigue modelling", "Multi-agent systems", "AnyLogic"],
+    image: "assets/images/task-allocation/workshop.png",
+    gallery: [
+      { src: "assets/images/task-allocation/workshop.png", caption: "The workshop: products of random complexity and demand are allocated to three operators, each with their own capability and a fatigue level that evolves over time." },
+      { src: "assets/images/task-allocation/markov-queue.jpg", caption: "Product arrivals modelled as a Markovian queue: Poisson arrivals and exponential service times." },
+      { src: "assets/images/task-allocation/poisson.png", caption: "Poisson process: random arrival times (left) and the distribution of the number of tasks per interval (right)." },
+      { src: "assets/images/task-allocation/petri-net.png", caption: "A stochastic Petri net, used to represent events, resources and synchronisation." },
+      { src: "assets/images/task-allocation/architecture.png", caption: "Final architecture: the M/M/1 queue feeds a supervisor agent, which allocates tasks to the assembly agents based on their skill, fatigue and work capacity." }
+    ],
     featured: true,
-    links: []
+    links: [{ text: "Read the phase 1 report (PDF, in French)", url: "assets/docs/inclusive-task-allocation.pdf" }]
   },
   {
     title: "Uncertain Catapult — Robust Inverse Design",
