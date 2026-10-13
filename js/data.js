@@ -76,20 +76,32 @@ const PROJECTS = [
     links: [{ text: "Read the full report (PDF, in French)", url: "assets/docs/catapult-report.pdf" }]
   },
   {
-    title: "Electric Motorcycle Innovation",
+    title: "Modular Electric Motorcycle",
     category: "Entrepreneurship",
-    period: "Oct 2024 — Jun 2025",
-    context: "Team project with Medusa (French e-motorcycle start-up) · ENSAM Metz",
-    summary: "Innovation concept for the electric motorcycle market, developed with a French start-up.",
+    period: "Oct 2024 — Jan 2025",
+    context: "PEIT (Entrepreneurship & Technological Innovation track), team of 3 · Arts et Métiers",
+    summary: "Which innovation could help electric motorcycles take off? A data-driven concept for a modular motorcycle that reconfigures itself for each use.",
     details: [
-      "Context — Medusa is a French electric motorcycle start-up. Our team had to propose an innovation concept for this market.",
-      "Approach — Brainstorming, market study, cross-analysis and synthesis to converge on one concept.",
-      "[Describe the concept, your role in the team and the start-up's feedback.]"
+      "Problem — Electric motorcycles are held back by range, price and charging, but also by rigidity of use: most simply copy combustion models, while riders range from city commuters to tourers and off-road riders. Our question: which innovation would let this segment thrive?",
+      "Choosing the topic — A brainstorm produced about fifty ideas (mind map). Five recurring themes were scored on innovation, usefulness, feasibility and originality; modularity of use came out on top.",
+      "Market study — The French market for motorcycles over 125 cc reached 202,553 registrations in 2024 (+2.5%), and the global electric motorcycle market was worth about $37 billion in 2023. A Pareto analysis of uses showed that road rides, commuting and travel account for over 65% of use cases.",
+      "From uses to specifications — We mapped 10 uses, 23 usage constraints and 20 adjustable technical characteristics, built two scoring matrices (usage → constraint from 0 to 3, constraint → characteristic from −2 to +2), and multiplied them (weighted cross-analysis) to score each characteristic for each use.",
+      "Calibration — A market benchmark gave the real range of each characteristic (e.g. wheelbase 1,200–1,600 mm, seat height 750–900 mm). Linear interpolation turned scores into target values, e.g. a 1,530 mm wheelbase and 25° rake for commuting. An interactive Excel model compares these targets with what each motorcycle category can offer.",
+      "Concept — Six modules: sliding and pivoting handlebar, adjustable or interchangeable seat, movable footrests, variable-pressure suspension, clip-on bodywork and a suitcase-format removable battery. The adjustable handlebar alone covers 8 of the 10 uses, and the five main modules together cover over 90% of the needs identified.",
+      "My contribution — I carried out the state-of-the-art study (with a teammate) and wrote and edited the final report."
     ],
-    tags: ["Market study", "Ideation", "Project management"],
-    image: "",
+    tags: ["Design thinking", "Market study", "Value analysis", "Weighted multi-criteria analysis", "Pareto analysis", "Excel modelling", "Product design"],
+    image: "assets/images/motorcycle/wheelbase-module.jpg",
+    gallery: [
+      { src: "assets/images/motorcycle/mind-map.png", caption: "Mind map from the initial brainstorm: about fifty topics around the electric motorcycle." },
+      { src: "assets/images/motorcycle/uses-pareto.png", caption: "Pareto chart of motorcycle uses: road rides, commuting and travel make up over 65% of use cases." },
+      { src: "assets/images/motorcycle/weighted-matrix.png", caption: "Weighted cross-analysis: the score of each technical characteristic for each use." },
+      { src: "assets/images/motorcycle/dynamic-model.png", caption: "Interactive model: for a chosen category (here roadster) and use (here road ride), the green band shows what the category can offer and the red mark the target value." },
+      { src: "assets/images/motorcycle/wheelbase-module.jpg", caption: "Proposed module for adjusting the wheelbase and the rake." },
+      { src: "assets/images/motorcycle/handlebar-module.png", caption: "Proposed module for adjusting handlebar width and orientation." }
+    ],
     featured: false,
-    links: []
+    links: [{ text: "Read the full report (PDF, in French)", url: "assets/docs/electric-motorcycle-report.pdf" }]
   },
   {
     title: "Markov Chains: Queues & Monopoly",
