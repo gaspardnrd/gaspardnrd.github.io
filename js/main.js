@@ -71,42 +71,76 @@ const view = document.getElementById("view");
 const page = document.body.dataset.page;
 
 if (page === "dashboard") {
-  const featured = PROJECTS.find(p => p.featured) || PROJECTS[0];
-  const fi = PROJECTS.indexOf(featured);
+  const master = EDUCATION[0], degree = EDUCATION[1];
+  const projectTile = (p, i) => `
+    <a class="card mini-project" href="projects.html#p${i}">
+      ${p.image ? `<img class="mini-thumb" src="${esc(p.image)}" alt="" loading="lazy">` : ""}
+      <span class="mono">// ${esc(p.category)} · ${esc(p.period)}</span>
+      <h3>${esc(p.title)}</h3>
+      <p>${esc(p.summary)}</p>
+      <span class="link">Read case study <i class="fa-solid fa-arrow-right"></i></span>
+    </a>`;
   view.innerHTML = `
     <h1 class="page-title">Overview</h1>
     <div class="grid-hero">
       <section class="card intro">
         <h2>Modelling & Production Systems</h2>
-        <p>I am a French engineering student at <strong>Arts et Métiers Institute of Technology (ENSAM)</strong>,
-           interested in the point where mathematics meets the shop floor.</p>
-        <p>I use <strong>graph theory, stochastic models and multi-agent simulation</strong> to make production
-           planning more robust and fairer. I am looking for a <strong>6-month research internship starting in February</strong>.</p>
-        <a class="link" href="resume.html">View full resume <i class="fa-solid fa-arrow-right"></i></a>
+        <p>I am a French engineering student at <strong>Arts et Métiers (ENSAM)</strong>, completing the
+           <strong>MSc KIMP research master in Industrial Engineering</strong> alongside my <strong>Diplôme d'Ingénieur</strong>.</p>
+        <p>My work sits where mathematics meets the shop floor: <strong>stochastic modelling</strong> (Markov chains, queues,
+           Petri nets), <strong>design of experiments</strong> and <strong>multi-agent simulation</strong> to make production
+           systems more robust and fairer.</p>
+        <p class="callout"><i class="fa-solid fa-magnifying-glass"></i>
+           Looking for a <strong>6-month research internship in industry from February 2027</strong> (master thesis).</p>
+        <div class="intro-links">
+          <a class="btn" href="resume.html"><i class="fa-solid fa-file-lines"></i> Resume</a>
+          <a class="btn btn-outline" href="mailto:${esc(PROFILE.email)}"><i class="fa-solid fa-envelope"></i> Contact</a>
+          <a class="btn btn-outline" href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
       </section>
       <div class="card photo-card">${photo("photo")}</div>
     </div>
-    <div class="grid-2">
-      <a class="card feature" href="projects.html#p${fi}">
-        <span class="badge">Featured project</span>
-        <h3>${esc(featured.title)}</h3>
-        <p>${esc(featured.summary)}</p>
-        <span class="link">Read case study <i class="fa-solid fa-arrow-right"></i></span>
+
+    <div class="stats">
+      <a class="card stat" href="academics.html">
+        <span class="mono">// Research master</span>
+        <strong>MSc KIMP</strong><span>${esc(master.period)} · ${esc(master.place)}</span>
       </a>
-      <a class="card feature" href="academics.html">
-        <span class="badge badge-alt">International</span>
-        <h3>Exchange in Malaysia</h3>
-        <p>Semester at Universiti Teknologi PETRONAS, March — August 2026.</p>
-        <span class="link">Academic journey <i class="fa-solid fa-arrow-right"></i></span>
+      <a class="card stat" href="academics.html">
+        <span class="mono">// Engineering degree</span>
+        <strong>Arts et Métiers</strong><span>Founding member of ParisTech</span>
       </a>
-      <a class="card feature" href="experience.html">
-        <span class="badge">Field experience</span>
-        <h3>VINCI Construction</h3>
-        <p>Formwork on the EOLE / Line 15 interfaces, Paris.</p>
-        <span class="link">Experience <i class="fa-solid fa-arrow-right"></i></span>
+      <a class="card stat" href="academics.html">
+        <span class="mono">// International</span>
+        <strong>Malaysia</strong><span>Exchange at UTP, Mar — Aug 2026</span>
       </a>
+      <a class="card stat" href="experience.html">
+        <span class="mono">// Field experience</span>
+        <strong>VINCI</strong><span>Formwork, EOLE / Line 15, Paris</span>
+      </a>
+    </div>
+
+    <div class="section-head">
+      <h2>Projects</h2>
+      <a class="link" href="projects.html">All projects <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="grid-2">${PROJECTS.map(projectTile).join("")}</div>
+
+    <div class="grid-2 lower">
       <section class="card">
-        <span class="mono">// SKILLS</span>
+        <span class="mono">// Academic journey</span>
+        <ul class="mini-list">
+          ${EDUCATION.map(e => `<li><strong>${esc(e.school)}</strong><span>${esc(e.label || "")} · ${esc(e.period)}</span></li>`).join("")}
+        </ul>
+        <a class="link" href="academics.html">Academic journey <i class="fa-solid fa-arrow-right"></i></a>
+        <span class="mono spaced">// Experience</span>
+        <ul class="mini-list">
+          ${EXPERIENCE.map(x => `<li><strong>${esc(x.title)}</strong><span>${esc(x.role)} · ${esc(x.period)}</span></li>`).join("")}
+        </ul>
+        <a class="link" href="experience.html">Experience <i class="fa-solid fa-arrow-right"></i></a>
+      </section>
+      <section class="card">
+        <span class="mono">// Skills</span>
         ${Object.entries(SKILLS).map(([k, v]) => `<h4>${esc(k)}</h4>${tags(v)}`).join("")}
       </section>
     </div>`;

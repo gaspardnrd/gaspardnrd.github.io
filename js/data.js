@@ -10,7 +10,7 @@ const PROFILE = {
   name: "Gaspard Nordin",
   tagline: ["Engineering Student", "Arts et Métiers"],
   email: "gaspardnordin@gmail.com",
-  linkedin: "https://www.linkedin.com/in/your-profile",   // ← put your real LinkedIn URL
+  linkedin: "https://www.linkedin.com/in/gaspard-nordin-a32736345",
   photo: "assets/images/photo.jpg",                        // ← add your photo with this name
   cv: "assets/cv.pdf"
 };
@@ -188,7 +188,7 @@ const EDUCATION = [
     place: "Metz · Paris",
     description: "A founding member of ParisTech, Arts et Métiers is renowned for its excellence in mechanical and industrial engineering. Its demanding curriculum pairs fundamental physics with hands-on industrial practice. Pursued in parallel with the MSc KIMP.",
     points: [
-      "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026)."
+      "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026). Main courses: oilfield and process-related corrosion, condition-based monitoring and analysis, mechatronics, control systems, and building air-conditioning systems."
     ],
     skills: ["Data Science", "Mechanics", "Thermodynamics", "Materials Science", "Supply Chain"]
   },
@@ -211,7 +211,8 @@ const EDUCATION = [
 ];
 
 const SKILLS = {
-  "Modelling": ["Graph theory", "Markov chains", "Petri nets", "Queueing theory"],
-  "Tools": ["Python", "AnyLogic (multi-agent)", "LaTeX", "Microsoft Office"],
+  "Modelling": ["Markov chains", "Queueing theory", "Stochastic Petri nets", "Multi-agent simulation", "Kriging"],
+  "Methods": ["Design of experiments (Taguchi)", "Gauge R&R / ANOVA", "Robust optimisation", "Genetic algorithms", "Weighted multi-criteria analysis"],
+  "Tools": ["Python", "AnyLogic", "Excel", "LaTeX", "Microsoft Office"],
   "Languages": ["French (native)", "English (C1)", "Spanish (B1)", "Chinese (beginner)"]
 };
