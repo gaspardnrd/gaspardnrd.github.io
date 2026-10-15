@@ -2,7 +2,7 @@
  * You normally don't need to edit this file. */
 
 const NAV = [
-  { href: "index.html",      label: "Dashboard",  icon: "fa-house" },
+  { href: "index.html",      label: "Home",       icon: "fa-house" },
   { href: "projects.html",   label: "Projects",   icon: "fa-code-branch" },
   { href: "resume.html",     label: "Resume",     icon: "fa-file-lines" },
   { href: "academics.html",  label: "Academics",  icon: "fa-graduation-cap" },
@@ -71,78 +71,40 @@ const view = document.getElementById("view");
 const page = document.body.dataset.page;
 
 if (page === "dashboard") {
-  const master = EDUCATION[0], degree = EDUCATION[1];
-  const projectTile = (p, i) => `
-    <a class="card mini-project" href="projects.html#p${i}">
-      ${p.image ? `<img class="mini-thumb" src="${esc(p.image)}" alt="" loading="lazy">` : ""}
-      <span class="mono">// ${esc(p.category)} · ${esc(p.period)}</span>
-      <h3>${esc(p.title)}</h3>
-      <p>${esc(p.summary)}</p>
-      <span class="link">Read case study <i class="fa-solid fa-arrow-right"></i></span>
-    </a>`;
+  const tiles = [
+    { href: "projects.html",   icon: "fa-code-branch",    title: "Projects",   text: "Academic projects in modelling, simulation and innovation, with reports." },
+    { href: "resume.html",     icon: "fa-file-lines",     title: "Resume",     text: "My CV, to read online or download as a PDF." },
+    { href: "academics.html",  icon: "fa-graduation-cap", title: "Academics",  text: "MSc KIMP, Arts et Métiers engineering degree and preparatory classes." },
+    { href: "experience.html", icon: "fa-briefcase",      title: "Experience", text: "Construction site internship with VINCI and private tutoring." }
+  ];
   view.innerHTML = `
     <h1 class="page-title">Overview</h1>
     <div class="grid-hero">
       <section class="card intro">
         <h2>Modelling & Production Systems</h2>
-        <p>I am a French engineering student at <strong>Arts et Métiers (ENSAM)</strong>, completing the
-           <strong>MSc KIMP research master in Industrial Engineering</strong> alongside my <strong>Diplôme d'Ingénieur</strong>.</p>
-        <p>My work sits where mathematics meets the shop floor: <strong>stochastic modelling</strong> (Markov chains, queues,
-           Petri nets), <strong>design of experiments</strong> and <strong>multi-agent simulation</strong> to make production
-           systems more robust and fairer.</p>
+        <p>I am a French engineering student at Arts et Métiers (ENSAM), completing the MSc KIMP research master
+           in Industrial Engineering alongside my engineering degree. I use mathematics and simulation to improve
+           how production systems are organised, so that they work better for both the company and the people in them.</p>
+        <p>Before Arts et Métiers, I spent three years in preparatory classes in mathematics and physics. Since then
+           I have worked on a VINCI construction site in Paris and studied for a semester in Malaysia. Outside
+           engineering, I play competitive tennis and football, I am a PADI-certified diver and I enjoy reading philosophy.</p>
         <p class="callout"><i class="fa-solid fa-magnifying-glass"></i>
-           Looking for a <strong>6-month research internship in industry from February 2027</strong> (master thesis).</p>
+           Looking for a 6-month research internship in industry from February 2027 (master thesis).</p>
         <div class="intro-links">
-          <a class="btn" href="resume.html"><i class="fa-solid fa-file-lines"></i> Resume</a>
-          <a class="btn btn-outline" href="mailto:${esc(PROFILE.email)}"><i class="fa-solid fa-envelope"></i> Contact</a>
+          <a class="btn" href="mailto:${esc(PROFILE.email)}"><i class="fa-solid fa-envelope"></i> Contact</a>
           <a class="btn btn-outline" href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
       </section>
       <div class="card photo-card">${photo("photo")}</div>
     </div>
-
-    <div class="stats">
-      <a class="card stat" href="academics.html">
-        <span class="mono">// Research master</span>
-        <strong>MSc KIMP</strong><span>${esc(master.period)} · ${esc(master.place)}</span>
-      </a>
-      <a class="card stat" href="academics.html">
-        <span class="mono">// Engineering degree</span>
-        <strong>Arts et Métiers</strong><span>Founding member of ParisTech</span>
-      </a>
-      <a class="card stat" href="academics.html">
-        <span class="mono">// International</span>
-        <strong>Malaysia</strong><span>Exchange at UTP, Mar — Aug 2026</span>
-      </a>
-      <a class="card stat" href="experience.html">
-        <span class="mono">// Field experience</span>
-        <strong>VINCI</strong><span>Formwork, EOLE / Line 15, Paris</span>
-      </a>
-    </div>
-
-    <div class="section-head">
-      <h2>Projects</h2>
-      <a class="link" href="projects.html">All projects <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="grid-2">${PROJECTS.map(projectTile).join("")}</div>
-
-    <div class="grid-2 lower">
-      <section class="card">
-        <span class="mono">// Academic journey</span>
-        <ul class="mini-list">
-          ${EDUCATION.map(e => `<li><strong>${esc(e.school)}</strong><span>${esc(e.label || "")} · ${esc(e.period)}</span></li>`).join("")}
-        </ul>
-        <a class="link" href="academics.html">Academic journey <i class="fa-solid fa-arrow-right"></i></a>
-        <span class="mono spaced">// Experience</span>
-        <ul class="mini-list">
-          ${EXPERIENCE.map(x => `<li><strong>${esc(x.title)}</strong><span>${esc(x.role)} · ${esc(x.period)}</span></li>`).join("")}
-        </ul>
-        <a class="link" href="experience.html">Experience <i class="fa-solid fa-arrow-right"></i></a>
-      </section>
-      <section class="card">
-        <span class="mono">// Skills</span>
-        ${Object.entries(SKILLS).map(([k, v]) => `<h4>${esc(k)}</h4>${tags(v)}`).join("")}
-      </section>
+    <div class="page-tiles">
+      ${tiles.map(t => `
+        <a class="card page-tile" href="${t.href}">
+          <i class="fa-solid ${t.icon}"></i>
+          <h3>${t.title}</h3>
+          <p>${t.text}</p>
+          <span class="link">Open <i class="fa-solid fa-arrow-right"></i></span>
+        </a>`).join("")}
     </div>`;
 }
 
