@@ -90,8 +90,9 @@ const PROJECTS = [
       "My contribution — I handled the programming of the simulation (classes, coordinator logic and path finding); my teammate handled the configuration and display part."
     ],
     tags: ["Python", "Object-oriented programming", "Inheritance", "Breadth-first search", "XML", "Tkinter"],
-    image: "assets/images/warehouse/bfs-path.svg",
+    image: "assets/images/warehouse/warehouse-level3.svg",
     gallery: [
+      { src: "assets/images/warehouse/warehouse-level3.svg", caption: "The level 3 warehouse (entrepot_niveau_3.xml): 15 products, 5 type-1 and 5 type-2 robots, 2 temporary zones and 3 ejectors feeding the conveyor." },
       { src: "assets/images/warehouse/flow.svg", caption: "How a product flows through the warehouse, with every action approved by the coordinator." },
       { src: "assets/images/warehouse/bfs-path.svg", caption: "Example of the path-finding logic: the shortest four-direction path found by breadth-first search on a sample grid, avoiding other robots and fixed structures." }
     ],
