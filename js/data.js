@@ -76,6 +76,29 @@ const PROJECTS = [
     links: [{ text: "Read the full report (PDF, in French)", url: "assets/docs/catapult-report.pdf" }]
   },
   {
+    title: "Automated Warehouse Simulation",
+    category: "Programming",
+    period: "Spring 2025",
+    context: "Object-oriented programming project, team of 2 · Arts et Métiers",
+    summary: "An object-oriented Python simulation of an automated warehouse, where robots, ejectors and a conveyor move products to the exit under the control of a central coordinator.",
+    details: [
+      "Brief — Simulate the flow of goods on a warehouse grid. Products leave a fixed storage zone, are carried by type-1 robots to temporary zones, then by type-2 robots to ejectors that feed a conveyor leading to the exit. Every action takes one cycle and must be approved by a central coordinator, which checks capacities and prevents collisions.",
+      "Object model — One class per entity (Product, FixedZone, TemporaryZone, Ejector, Conveyor), a Robot base class with two specialised subclasses, and a Centralisateur that receives and validates every request. Typed attributes, accessors and mutators throughout.",
+      "Coordination — The coordinator gives each robot the nearest available target (Manhattan distance), skipping targets already chosen by another robot. The conveyor moves products one cell per cycle towards the exit, nearest product first, within its maximum capacity.",
+      "Path finding — Robots move in four directions only. A breadth-first search finds the shortest path to the target, treating other robots and fixed structures as obstacles and trying the directions that lead towards the goal first.",
+      "Configuration and outputs — The warehouse is loaded from an XML file and displayed with Tkinter, with a heatmap of the most-used cells, distance statistics per robot and a movement log saved to a file.",
+      "My contribution — I handled the programming of the simulation (classes, coordinator logic and path finding); my teammate handled the configuration and display part."
+    ],
+    tags: ["Python", "Object-oriented programming", "Inheritance", "Breadth-first search", "XML", "Tkinter"],
+    image: "assets/images/warehouse/bfs-path.svg",
+    gallery: [
+      { src: "assets/images/warehouse/flow.svg", caption: "How a product flows through the warehouse, with every action approved by the coordinator." },
+      { src: "assets/images/warehouse/bfs-path.svg", caption: "Example of the path-finding logic: the shortest four-direction path found by breadth-first search on a sample grid, avoiding other robots and fixed structures." }
+    ],
+    featured: false,
+    links: []
+  },
+  {
     title: "Modular Electric Motorcycle",
     category: "Entrepreneurship",
     period: "Oct 2024 — Jan 2025",

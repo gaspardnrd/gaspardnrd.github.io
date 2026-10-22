@@ -72,7 +72,7 @@ const page = document.body.dataset.page;
 
 if (page === "dashboard") {
   const tiles = [
-    { href: "projects.html",   icon: "fa-code-branch",    title: "Projects",   text: "Academic projects in modelling, simulation and innovation, with reports." },
+    { href: "projects.html",   icon: "fa-code-branch",    title: "Projects",   text: "Academic projects in modelling, simulation, programming and innovation." },
     { href: "resume.html",     icon: "fa-file-lines",     title: "Resume",     text: "My CV, to read online or download as a PDF." },
     { href: "academics.html",  icon: "fa-graduation-cap", title: "Academics",  text: "MSc KIMP, Arts et Métiers engineering degree and preparatory classes." },
     { href: "experience.html", icon: "fa-briefcase",      title: "Experience", text: "Construction site internship with VINCI and private tutoring." }

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" width="1100" height="330">
+<rect width="1100" height="330" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a413a"/></marker></defs>
+<rect x="380" y="20" width="340" height="62" rx="10" fill="#301c0e"/>
+<text x="550" y="50" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#f2ede9" text-anchor="middle">Centralisateur (coordinator)</text>
+<text x="550" y="72" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" fill="#e2bf98" text-anchor="middle">approves or refuses every action</text>
+<rect x="40" y="160" width="140" height="80" rx="8" fill="#8dd3c7" stroke="#21201e" stroke-width="1.5"/>
+<text x="110.0" y="206" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#21201e" text-anchor="middle">Fixed zone</text>
+<line x1="110.0" y1="158" x2="420" y2="82" stroke="#8a7a6c" stroke-dasharray="5 5" stroke-width="1.3"/>
+<rect x="330" y="160" width="140" height="80" rx="8" fill="#ffffb3" stroke="#21201e" stroke-width="1.5"/>
+<text x="400.0" y="206" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#21201e" text-anchor="middle">Temporary zone</text>
+<line x1="400.0" y1="158" x2="501" y2="82" stroke="#8a7a6c" stroke-dasharray="5 5" stroke-width="1.3"/>
+<rect x="620" y="160" width="140" height="80" rx="8" fill="#bebada" stroke="#21201e" stroke-width="1.5"/>
+<text x="690.0" y="206" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#21201e" text-anchor="middle">Ejector</text>
+<line x1="690.0" y1="158" x2="582" y2="82" stroke="#8a7a6c" stroke-dasharray="5 5" stroke-width="1.3"/>
+<rect x="960" y="160" width="100" height="80" rx="8" fill="#80b1d3" stroke="#21201e" stroke-width="1.5"/>
+<text x="1010.0" y="206" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#21201e" text-anchor="middle">Exit</text>
+<line x1="1010.0" y1="158" x2="672" y2="82" stroke="#8a7a6c" stroke-dasharray="5 5" stroke-width="1.3"/>
+<line x1="180" y1="200" x2="323" y2="200" stroke="#4a413a" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="255" cy="200" r="22" fill="#d64545" stroke="#21201e" stroke-width="1.5"/>
+<text x="255" y="205" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">R1</text>
+<line x1="470" y1="200" x2="613" y2="200" stroke="#4a413a" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="545" cy="200" r="22" fill="#3a6fd8" stroke="#21201e" stroke-width="1.5"/>
+<text x="545" y="205" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">R2</text>
+<rect x="790" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<rect x="816" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<rect x="842" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<rect x="868" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<rect x="894" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<rect x="920" y="186" width="26" height="28" fill="#fb8072" stroke="#21201e" stroke-width="1"/>
+<line x1="792" y1="200" x2="954" y2="200" stroke="#21201e" stroke-width="2" marker-end="url(#a)"/>
+<text x="868" y="242" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="14" fill="#21201e" text-anchor="middle">Conveyor</text>
+<line x1="760" y1="200" x2="788" y2="200" stroke="#4a413a" stroke-width="2" marker-end="url(#a)"/>
+<text x="255" y="275" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" fill="#8a7a6c" text-anchor="middle">Robot 1 picks up a product</text>
+<text x="545" y="275" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" fill="#8a7a6c" text-anchor="middle">Robot 2 takes it to an ejector</text>
+<text x="940" y="275" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="13" fill="#8a7a6c" text-anchor="middle">one cell per cycle, limited capacity</text>
+<text x="550.0" y="312" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="14" fill="#4a413a" text-anchor="middle">Each move, pick-up or drop-off takes one cycle and must be approved by the coordinator (capacities, collisions).</text>
+</svg>
