@@ -162,10 +162,10 @@ const EXPERIENCE = [
     label: "Construction",
     period: "Jun 2025 — Jul 2025",
     title: "Chantiers Modernes Construction (VINCI)",
-    role: "Construction Site Worker Intern — Formwork",
+    role: "Site Operations Intern (worker internship) — Formwork",
     place: "Paris",
     points: [
-      "On-site immersion on a major infrastructure project (EOLE / Line 15 interfaces).",
+      "Worked on the interfaces between the EOLE extension (RER E) and Line 15 of the Grand Paris Express.",
       "Full prepare–formwork–pour–strip cycle for reinforced concrete: fibre-reinforced segments, walls, columns, foundation raft in a shaft.",
       "Read technical drawings, took measurements with surveyor support and ran visual quality checks.",
       "Coordinated with waterproofing and rebar teams on sequencing and site readiness."
@@ -206,11 +206,11 @@ const EDUCATION = [
   },
   {
     label: "Engineering Degree",
-    period: "Sep 2024 — Present",
+    period: "Sep 2024 — Sep 2027",
     school: "Arts et Métiers Institute of Technology (ENSAM)",
-    degree: "Diplôme d'Ingénieur — Generalist Engineering Degree (Programme Grande École)",
+    degree: "Diplôme d'Ingénieur — Generalist Engineering Degree (Programme Grande École), double degree with the MSc KIMP",
     place: "Metz · Paris",
-    description: "A founding member of ParisTech, Arts et Métiers is renowned for its excellence in mechanical and industrial engineering. Its demanding curriculum pairs fundamental physics with hands-on industrial practice. Pursued in parallel with the MSc KIMP.",
+    description: "Arts et Métiers, a founding school of ParisTech, is renowned for its excellence in mechanical and industrial engineering. Its demanding curriculum pairs fundamental physics with hands-on industrial practice. Pursued in parallel with the MSc KIMP.",
     points: [
       "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026). Main courses: oilfield and process-related corrosion, condition-based monitoring and analysis, mechatronics, control systems, and building air-conditioning systems."
     ],
@@ -225,7 +225,8 @@ const EDUCATION = [
     description: "Intensive programme in mathematics and physics preparing for the competitive entrance exams of the French Grandes Écoles d'ingénieurs.",
     points: [
       "Around 35 hours of lectures and tutorials per week.",
-      "A 4-hour written exam and 2 to 3 one-hour oral examinations (khôlles) every week."
+      "A 4-hour written exam and 2 to 3 one-hour oral examinations (khôlles) every week.",
+      "Admitted to Arts et Métiers through the French national competitive entrance examination."
     ],
     skills: [
       "Linear algebra", "Real & complex analysis", "Probability",
