@@ -238,6 +238,6 @@ const EDUCATION = [
 const SKILLS = {
   "Modelling": ["Markov chains", "Queueing theory", "Stochastic Petri nets", "Multi-agent simulation", "Kriging"],
   "Methods": ["Design of experiments (Taguchi)", "Gauge R&R / ANOVA", "Robust optimisation", "Genetic algorithms", "Weighted multi-criteria analysis"],
-  "Tools": ["Python", "AnyLogic", "Excel", "LaTeX", "Microsoft Office"],
+  "Tools": ["Python", "MATLAB", "AnyLogic", "Excel", "LaTeX", "Microsoft Office"],
   "Languages": ["French (native)", "English (C1)", "Spanish (B1)", "Chinese (beginner)"]
 };
