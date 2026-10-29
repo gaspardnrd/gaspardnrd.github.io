@@ -31,7 +31,7 @@ document.getElementById("sidebar").innerHTML = `
   <div class="side-footer">
     <div class="socials">
       <a href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="mailto:${esc(PROFILE.email)}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:${esc(PROFILE.email)}" class="js-contact" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
     <p>© ${new Date().getFullYear()} ${esc(PROFILE.name)}</p>
   </div>`;
@@ -91,7 +91,7 @@ if (page === "dashboard") {
         <p class="callout"><i class="fa-solid fa-magnifying-glass"></i>
            Looking for a 6-month research internship in industry from February 2027 (master thesis).</p>
         <div class="intro-links">
-          <a class="btn" href="mailto:${esc(PROFILE.email)}"><i class="fa-solid fa-envelope"></i> Contact</a>
+          <a class="btn js-contact" href="mailto:${esc(PROFILE.email)}"><i class="fa-solid fa-envelope"></i> Contact</a>
           <a class="btn btn-outline" href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
       </section>
@@ -196,3 +196,51 @@ function openProject(i) {
       `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")}</div>` : ""}`;
   dlg.showModal();
 }
+
+
+/* ---------- Contact window ----------
+ * A plain mailto: link only works if a mail app is set up on the visitor's computer.
+ * This window always shows the address, with a copy button and webmail shortcuts. */
+function openContact(e) {
+  e.preventDefault();
+  let dlg = document.getElementById("contact-dialog");
+  if (!dlg) {
+    const mail = encodeURIComponent(PROFILE.email);
+    const subject = encodeURIComponent("Internship opportunity");
+    dlg = document.createElement("dialog");
+    dlg.id = "contact-dialog";
+    dlg.innerHTML = `
+      <button class="close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dlg-body contact-body">
+        <span class="mono">// Contact</span>
+        <h2>Get in touch</h2>
+        <p>You can reach me by email at:</p>
+        <div class="contact-address">
+          <strong>${esc(PROFILE.email)}</strong>
+          <button class="btn btn-outline copy-mail" type="button"><i class="fa-regular fa-copy"></i> Copy</button>
+        </div>
+        <div class="links">
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=${mail}&su=${subject}" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i> Write with Gmail</a>
+          <a class="btn btn-outline" href="https://outlook.live.com/mail/0/deeplink/compose?to=${mail}&subject=${subject}" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Outlook</a>
+          <a class="btn btn-outline" href="mailto:${esc(PROFILE.email)}?subject=${subject}"><i class="fa-solid fa-envelope"></i> Mail app</a>
+          <a class="btn btn-outline" href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>`;
+    document.body.appendChild(dlg);
+    dlg.querySelector(".close").onclick = () => dlg.close();
+    dlg.addEventListener("click", ev => { if (ev.target === dlg) dlg.close(); });
+    const copyBtn = dlg.querySelector(".copy-mail");
+    copyBtn.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(PROFILE.email);
+      } catch (err) {
+        const r = document.createRange(); r.selectNodeContents(dlg.querySelector(".contact-address strong"));
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); document.execCommand("copy");
+      }
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000);
+    };
+  }
+  dlg.showModal();
+}
+document.querySelectorAll(".js-contact").forEach(a => a.addEventListener("click", openContact));
