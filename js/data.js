@@ -212,6 +212,7 @@ const EDUCATION = [
     place: "Metz · Paris",
     description: "Arts et Métiers, a founding school of ParisTech, is renowned for its excellence in mechanical and industrial engineering. Its demanding curriculum pairs fundamental physics with hands-on industrial practice. Pursued in parallel with the MSc KIMP.",
     points: [
+      "Curriculum built on four pillars: industrial engineering (design, lean management, lean manufacturing, production management), mechanical engineering (solid mechanics, materials science), energy engineering (fluid mechanics, thermodynamics, power electronics) and management (economics, accounting, communication, management science).",
       "Exchange semester at Universiti Teknologi PETRONAS, Malaysia (Mar — Aug 2026). Main courses: oilfield and process-related corrosion, condition-based monitoring and analysis, mechatronics, control systems, and building air-conditioning systems."
     ],
     skills: ["Data Science", "Mechanics", "Thermodynamics", "Materials Science", "Supply Chain"]
